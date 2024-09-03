@@ -37,7 +37,9 @@ int main() {
             break;
         } else if (user_input == "up") {
             current_path = current_path.parent_path();
-        } else {
+        } else if (user_input == "help") {
+            std::cout << "to exit type 'exit' ";
+        }else {
             std::filesystem::path new_path = current_path / user_input;
             if (std::filesystem::exists(new_path) && std::filesystem::is_directory(new_path)) {
                 current_path = new_path;
